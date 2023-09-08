@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Wordle</string>
+    <string name="guess_1">Guess #1</string>
+    <string name="guess_2">Guess #2</string>
+    <string name="guess_3">Guess #3</string>
+    <string name="guess_1_check">Guess #1 Check</string>
+    <string name="guess_2_check">Guess #2 Check</string>
+    <string name="guess_3_check">Guess #3 Check</string>
+    <string name="button">GUESS!</string>
+    <string name="user_command">Enter 4 letter guess here</string>
+    <string name= "input_1">Input #1</string>
+    <string name= "input_2">Input #2</string>
+    <string name= "input_3">Input #3</string>
+    <string name="result_1">Result #1</string>
+    <string name="result_2">Result #2</string>
+    <string name="result_3">Result #3</string>
+    <string name="secret_word">GOLDEN WORD</string>
+    <string name="reset">Reset</string>
+</resources>
+
+
