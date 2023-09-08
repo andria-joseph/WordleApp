@@ -12,20 +12,17 @@ import android.widget.Toast
 
 
 class MainActivity : ComponentActivity() {
-    val wordToGuess = "AREA"
+    //generate a random 4 letter word from FourLetterWordList
+    val wordToGuess = FourLetterWordList.getRandomFourLetterWord()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             setContentView(R.layout.activity_main)
-
-            //generate a random 4 letter word from FourLetterWordList
-
-
             //finding the 'GUESS' button for reference
             val button = findViewById<Button>(R.id.guessButton)
             //finding the EditText widget for reference
-            var input = findViewById<EditText>(R.id.userGuessEditText)
+            val input = findViewById<EditText>(R.id.userGuessEditText)
 
             //finding TextViews for reference
             val guess1 = findViewById<TextView>(R.id.guess1TextView)
@@ -43,13 +40,13 @@ class MainActivity : ComponentActivity() {
             val thirdGuess = findViewById<TextView>(R.id.input3TextView)
             val thirdResult = findViewById<TextView>(R.id.result3TextView)
 
-            var hiddenWord = findViewById<TextView>(R.id.secretWord)
+            val hiddenWord = findViewById<TextView>(R.id.secretWord)
             var checkIfCorrect: String
             var numGuesses = 0
             //setting On Click Listener
             button.setOnClickListener {
                 Log.v("User made a guess", "Button clicked!")
-                var str = input.text.toString()
+                val str = input.text.toString()
                 if(str.all { it.isLetter() }) {
 
                     numGuesses++
