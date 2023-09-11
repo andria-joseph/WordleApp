@@ -7,6 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -41,13 +42,16 @@ class MainActivity : ComponentActivity() {
             val thirdResult = findViewById<TextView>(R.id.result3TextView)
 
             val hiddenWord = findViewById<TextView>(R.id.secretWord)
+            val winOrLose = findViewById<TextView>(R.id.winOrLose)
+            val starImage = findViewById<ImageView>(R.id.starImageView)
+
             var checkIfCorrect: String
             var numGuesses = 0
             //setting On Click Listener
             button.setOnClickListener {
                 Log.v("User made a guess", "Button clicked!")
                 val str = input.text.toString()
-                if(str.all { it.isLetter() }) {
+                if (str.all { it.isLetter() }) {
 
                     numGuesses++
                     if (numGuesses == 1) {
@@ -62,6 +66,9 @@ class MainActivity : ComponentActivity() {
                         if (firstGuess.text == wordToGuess) {
                             hiddenWord.text = wordToGuess
                             hiddenWord.visibility = View.VISIBLE
+                            starImage.visibility = View.VISIBLE
+                            winOrLose.text = getString(R.string.winner)
+                            winOrLose.visibility = View.VISIBLE
                             button.text = getString(R.string.reset)
                             button.setOnClickListener {
                                 val intent = intent
@@ -71,7 +78,8 @@ class MainActivity : ComponentActivity() {
                         }
 
 
-                    } else if (numGuesses == 2) {
+                    }
+                    else if (numGuesses == 2) {
                         secondGuess.text = input.text.toString().uppercase()
                         guess2.visibility = View.VISIBLE
                         secondGuess.visibility = View.VISIBLE
@@ -83,6 +91,9 @@ class MainActivity : ComponentActivity() {
                         if (secondGuess.text == wordToGuess) {
                             hiddenWord.text = wordToGuess
                             hiddenWord.visibility = View.VISIBLE
+                            starImage.visibility = View.VISIBLE
+                            winOrLose.text = getString(R.string.winner)
+                            winOrLose.visibility = View.VISIBLE
                             button.text = getString(R.string.reset)
                             button.setOnClickListener {
                                 val intent = intent
@@ -90,7 +101,8 @@ class MainActivity : ComponentActivity() {
                                 startActivity(intent)
                             }
                         }
-                    } else if (numGuesses == 3) {
+                    }
+                    else if (numGuesses == 3) {
                         thirdGuess.text = input.text.toString().uppercase()
                         guess3.visibility = View.VISIBLE
                         thirdGuess.visibility = View.VISIBLE
@@ -102,25 +114,37 @@ class MainActivity : ComponentActivity() {
                         if (thirdGuess.text == wordToGuess) {
                             hiddenWord.text = wordToGuess
                             hiddenWord.visibility = View.VISIBLE
+                            starImage.visibility = View.VISIBLE
+                            winOrLose.text = getString(R.string.winner)
+                            winOrLose.visibility = View.VISIBLE
                             button.text = getString(R.string.reset)
                             button.setOnClickListener {
                                 val intent = intent
                                 finish()
                                 startActivity(intent)
                             }
-                        } else {
+                        }
+                        else {
                             hiddenWord.text = wordToGuess
                             hiddenWord.visibility = View.VISIBLE
+                            winOrLose.text = getString(R.string.loser)
+                            winOrLose.visibility = View.VISIBLE
+                            button.text = getString(R.string.reset)
+                            button.setOnClickListener {
+                                val intent = intent
+                                finish()
+                                startActivity(intent)
+                            }
                         }
                     }
                 }
-                else{
-                    Toast.makeText(this, "Please enter a FOUR LETTER WORD!", Toast.LENGTH_SHORT).show()
+                else {
+                    Toast.makeText(this, "Please enter a FOUR LETTER WORD!", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
-            }
         }
-
+    }
 
     /**
      * Parameters / Fields:

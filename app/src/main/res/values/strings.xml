@@ -14,8 +14,10 @@
     <string name="result_1">Result #1</string>
     <string name="result_2">Result #2</string>
     <string name="result_3">Result #3</string>
-    <string name="secret_word">GOLDEN WORD</string>
     <string name="reset">Reset</string>
+    <string name="secret_word">SECRET WORD</string>
+    <string name="winner">You are a winner!</string>
+    <string name="loser">You lose!</string>
 </resources>
 
 
