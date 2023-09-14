@@ -31,7 +31,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![Wordle](https://github.com/andria-joseph/WordleApp/assets/104771992/b3d42a01-661d-4c0b-90ab-9f1c96ce7c8c)
+![WordleDemo](https://github.com/andria-joseph/WordleApp/assets/104771992/5c9883be-b4bb-41c7-9ced-fbaed749786d)
 
 GIF created with ...  
 [ScreenToGif](https://www.screentogif.com/) for Windows
